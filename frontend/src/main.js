@@ -1,5 +1,5 @@
 import { createApp } from "vue"
-
+import { createPinia } from "pinia"
 import App from "./App.vue"
 import router from "./router"
 import { initSocket } from "./socket"
@@ -12,6 +12,7 @@ import {
 	ErrorMessage,
 	FormControl,
 	Input,
+	Avatar,
 	TextInput,
 	frappeRequest,
 	pageMetaPlugin,
@@ -28,6 +29,7 @@ const globalComponents = {
 	FormControl,
 	ErrorMessage,
 	Dialog,
+	Avatar,
 	Alert,
 	Badge,
 }
@@ -46,5 +48,6 @@ app.config.globalProperties.$socket = socket
 for (const key in globalComponents) {
 	app.component(key, globalComponents[key])
 }
-
+const pinia = createPinia()
+app.use(pinia)
 app.mount("#app")

@@ -23,7 +23,7 @@
     </div>
     <Dialog :options="{
         title: 'Modal Dialog',
-        message: 'data succuss',
+        message: 'Application submitted successfully!',
         actions: [
             {
                 label: 'Close',
@@ -36,7 +36,10 @@
 <script setup>
 import { ref, computed, watch } from "vue";
 import { Input, Button, createResource, Dialog } from "frappe-ui";
+import { useLoadingStore } from "@/stores/loadingStore"
 
+
+const loadingStore = useLoadingStore()
 const dialog5 = ref(false);
 
 const form = ref({
@@ -62,13 +65,15 @@ const academicData = computed(() => academic.data ? academic.data[0] : null);
 
 watch(academicData, (newVal) => {
     if (newVal) {
+        loadingStore.startLoading()
         form.value.academic_year = newVal.academic_year ;
+        loadingStore.stopLoading()
     }
 });
 
 const submitForm = async () => {
     console.log(form.value);
-    
+    loadingStore.startLoading()
     try {
         const response = await fetch("/api/method/collage.api.applicant.submit_student_applicant", {
             method: "POST",
@@ -91,8 +96,10 @@ const submitForm = async () => {
                 paid: false
             };
         }
+        loadingStore.stopLoading()
     } catch (err) {
         alert("Error submitting form:", err);
+        loadingStore.stopLoading()
     }
 };
 
@@ -114,8 +121,10 @@ const departments = computed(() => {
 
 // Watch selected department and update program
 watch(() => form.value.department, (selectedDept) => {
+    loadingStore.startLoading()
     const dept = departments.value.find(d => d.value === selectedDept);
     form.value.program = dept ? dept.program : "";
+    loadingStore.stopLoading()
 });
 </script>
 
