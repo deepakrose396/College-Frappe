@@ -1,5 +1,5 @@
 <template>
-  <header class=" bg-green-900 p-2 shadow">
+  <header class=" bg-green-900 p-2 shadow-md border-b border-gray-600">
     <nav class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Left: Brand -->

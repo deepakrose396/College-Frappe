@@ -44,6 +44,12 @@ const routes = [
 		name: "ApplicantList",
 		component: () => import("@/components/ApplicantList.vue"),
 		meta: { requiresAuth: true }
+	},
+	{
+		name: "Sidebar",
+		path: "/sidebar",
+		component: () => import("@/pages/Sidebar.vue"),
+		meta: { requiresAuth: true }
 	}
 
 ]
