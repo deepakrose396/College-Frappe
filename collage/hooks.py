@@ -5,7 +5,13 @@ app_description = "create application"
 app_email = "deepakjcen3@gmail.com"
 app_license = "mit"
 
+
+
+
 # Apps
+
+
+fixtures = ["Department", "Program List", "Academic Year", "Fee"]
 # ------------------
 
 # required_apps = []

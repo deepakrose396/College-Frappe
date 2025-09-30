@@ -6,8 +6,10 @@ from frappe.model.document import Document
 
 
 class StudentApplicant(Document):
-	def before_save(self):
-		if self.paid == 1:
-			self.status = "Applied"
-		elif self.paid == 0:
-			self.status = "Payment Pending"
+	# def before_save(self):
+	# 	if self.paid == 1:
+	# 		self.status = "Applied"
+	# 	elif self.paid == 0:
+	# 		self.status = "Payment Pending"
+    pass
+		

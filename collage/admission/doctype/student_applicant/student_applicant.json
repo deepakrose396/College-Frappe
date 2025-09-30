@@ -5,23 +5,42 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "personal_details_section",
   "first_name",
+  "last_name",
+  "date_of_birth",
+  "gender",
+  "phone",
   "email",
+  "column_break_eoms",
   "academic_year",
+  "application_date",
   "department",
+  "program",
   "paid",
   "status",
-  "column_break_eoms",
-  "last_name",
-  "phone",
-  "application_date",
-  "program"
+  "section_break_ijno",
+  "city",
+  "state",
+  "nationality",
+  "postal_code",
+  "column_break_mikg",
+  "address",
+  "section_break_dmup",
+  "guardian_name",
+  "guardian_phone",
+  "previous_school",
+  "column_break_fwnc",
+  "marks_obtained",
+  "_12th_certificate",
+  "ug_certificate"
  ],
  "fields": [
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name"
+   "label": "First Name",
+   "reqd": 1
   },
   {
    "fieldname": "email",
@@ -35,7 +54,8 @@
    "fieldname": "academic_year",
    "fieldtype": "Link",
    "label": "Academic Year",
-   "options": "Academic Year"
+   "options": "Academic Year",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_eoms",
@@ -62,14 +82,16 @@
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
-   "options": "Department"
+   "options": "Department",
+   "reqd": 1
   },
   {
    "fetch_from": "department.program",
    "fieldname": "program",
    "fieldtype": "Data",
    "label": "Program",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "default": "0",
@@ -82,12 +104,104 @@
    "fieldtype": "Data",
    "label": "Status",
    "read_only": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Permanent Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "label": "Guardian / Parent Name"
+  },
+  {
+   "fieldname": "guardian_phone",
+   "fieldtype": "Data",
+   "label": "Guardian Phone"
+  },
+  {
+   "fieldname": "previous_school",
+   "fieldtype": "Data",
+   "label": "Previous School / College"
+  },
+  {
+   "fieldname": "marks_obtained",
+   "fieldtype": "Data",
+   "label": "Marks / GPA",
+   "reqd": 1
+  },
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "section_break_ijno",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_mikg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dmup",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "column_break_fwnc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "doc.program == 'PG'",
+   "fieldname": "ug_certificate",
+   "fieldtype": "Attach Image",
+   "label": "UG Certificate"
+  },
+  {
+   "fieldname": "_12th_certificate",
+   "fieldtype": "Attach Image",
+   "label": "12'th Certificate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-24 16:05:46.074030",
+ "modified": "2025-09-29 18:51:27.924708",
  "modified_by": "Administrator",
  "module": "Admission",
  "name": "Student Applicant",

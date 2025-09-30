@@ -1,12 +1,12 @@
 import { userResource } from "@/data/user"
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory } from "vue-router"
 import { session } from "./data/session"
 
 
 
 const routes = [
 	{
-		path: "/",
+		path: "/Home",
 		name: "Home",
 		component: () => import("@/pages/Home.vue"),
 	},
@@ -38,13 +38,19 @@ const routes = [
 		name: "ApplicantProfile",
 		component: () => import("@/components/ApplicantProfile.vue"),
 		meta: { requiresAuth: true }
+	},
+	{
+		path: "/applicant-list",
+		name: "ApplicantList",
+		component: () => import("@/components/ApplicantList.vue"),
+		meta: { requiresAuth: true }
 	}
 
 ]
 
 const router = createRouter({
-	history: createWebHistory("/frontend"),
-	routes,
+  history: createWebHashHistory(),
+  routes,
 })
 
 const publicPages = ["Login", "Navbar","ApplicationForm", "SetPassword"]; // 👈 add your public routes here
