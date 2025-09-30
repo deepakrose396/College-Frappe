@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-gray-50 py-10 px-6">
+    <div class="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 py-10 px-6">
         <!-- Header -->
         <h1 class="text-center text-3xl font-bold text-gray-700 mb-10">
             Applicant List

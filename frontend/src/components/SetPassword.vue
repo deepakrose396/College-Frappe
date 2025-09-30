@@ -105,9 +105,7 @@ const handleSubmit = async () => {
       const data = await res.json()
       successMessage.value = "Password updated successfully!"
       console.log("Response:", data)
-      setTimeout(() => {
-        router.push("/my-profile");
-      }, 2000)
+      await route.push({name: "ApplicantProfile"})
     } else {
       const err = await res.json()
       errorMessage.value = err.message || "Something went wrong."

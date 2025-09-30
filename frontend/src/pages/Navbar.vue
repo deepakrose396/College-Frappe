@@ -1,9 +1,9 @@
 <template>
-  <header class="bg-white shadow">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header class=" bg-green-900 p-2 shadow">
+    <nav class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Left: Brand -->
-        <div class="flex-shrink-0 text-xl font-bold text-blue-600">
+        <div class="flex-shrink-0 text-2xl font-bold text-white">
           College Portal
         </div>
 
@@ -25,11 +25,11 @@
           <!-- If not logged in -->
           <div v-else class="space-x-4">
             <router-link to="/application"
-              class="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+              class="px-4 py-2 rounded-lg bg-green-500/50 text-white font-medium hover:bg-green-800 hover:border-dark-amber-50 solid hover:border transition">
               Application
             </router-link>
             <router-link to="/account/login"
-              class="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+              class="px-4 py-2 rounded-lg bg-green-500/50 text-white font-medium hover:bg-green-800 hover:border-dark-amber-50 solid hover:border transition">
               Login
             </router-link>
           </div>

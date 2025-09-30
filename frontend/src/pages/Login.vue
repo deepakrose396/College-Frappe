@@ -1,15 +1,15 @@
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 px-4">
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 px-4">
     <div
-      class="relative w-full max-w-md bg-pink-500 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/20 animate-fadeIn">
+      class="w-full max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8 space-y-6 animate-fadeIn relative z-10">
 
       <h2 class="text-2xl font-bold text-white text-center mb-6 tracking-wide animate-slideDown">
-        Welcome Back 👋
+        Welcome Back
       </h2>
-      <p class="text-sm text-gray-200 text-center mb-6 animate-fadeInDelay">
+      <!-- <p class="text-sm text-gray-200 text-center mb-6 animate-fadeInDelay">
         Login to your <span class="font-semibold">FrappeUI App</span>
-      </p>
+      </p> -->
 
       <form class="flex flex-col space-y-4" @submit.prevent="submit">
         <div class="animate-slideUp">
@@ -27,7 +27,7 @@
         <button type="submit"
           class="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-blue-500 text-white font-semibold hover:scale-105 transform transition-all duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-pink-400 animate-bounceIn"
           :disabled="loading">
-          <span v-if="!loading">🚀 Login</span>
+          <span v-if="!loading">Login</span>
           <span v-else class="animate-pulse">Loading...</span>
         </button>
       </form>
